@@ -8,7 +8,7 @@ spring:
 #  port: 8090
 #spring:
 #  datasource:
-#    url: jdbc:postgresql://localhost:5433/database
+#    url: jdbc:postgresql://localhost:5434/database
 #    driver-class-name: org.postgresql.Driver
 #    username: username
 #    password: password
