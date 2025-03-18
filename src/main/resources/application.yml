@@ -2,7 +2,7 @@ spring:
   application:
     name: agenda-docker
   profiles:
-    active: local
+    active: prod
 
 #server:
 #  port: 8090
