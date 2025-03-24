@@ -25,4 +25,16 @@ public class AgendaController {
     public ResponseEntity<?> create(@RequestBody Contato contato) {
         return new ResponseEntity<>(contatoService.create(contato), HttpStatus.OK);
     }
+
+    @GetMapping("{id}")
+    public ResponseEntity<?> findById(@PathVariable Long id) {
+        return new ResponseEntity<>(contatoService.findById(id), HttpStatus.OK);
+    }
+
+    @GetMapping("busca")
+    public ResponseEntity<?> findByEmail(@RequestParam String email) {
+        return new ResponseEntity<>(contatoService.findByEmail(email), HttpStatus.OK);
+    }
+
+
 }
