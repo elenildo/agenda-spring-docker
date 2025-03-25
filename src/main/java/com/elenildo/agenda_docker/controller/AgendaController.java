@@ -41,4 +41,10 @@ public class AgendaController {
         return new ResponseEntity<>(contatoService.update(id, contato), HttpStatus.OK);
     }
 
+    @DeleteMapping("{id}")
+    public ResponseEntity<?> deleteById(@PathVariable Long id) {
+        contatoService.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }
