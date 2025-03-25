@@ -36,5 +36,9 @@ public class AgendaController {
         return new ResponseEntity<>(contatoService.findByEmail(email), HttpStatus.OK);
     }
 
+    @PutMapping("{id}")
+    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Contato contato) {
+        return new ResponseEntity<>(contatoService.update(id, contato), HttpStatus.OK);
+    }
 
 }

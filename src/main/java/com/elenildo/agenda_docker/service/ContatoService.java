@@ -36,4 +36,12 @@ public class ContatoService {
         return contatoRepository.findByEmailIgnoreCase(email)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Contato não localizado."));
     }
+
+    public Contato update(Long id, Contato contato) {
+        var busca = findById(id);
+        if(contatoRepository.existsByEmail(contato.getEmail().trim()) && !busca.getEmail().equals(contato.getEmail().trim()))
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "E-mail já existente.");
+        contato.setId(id);
+        return contatoRepository.save(contato);
+    }
 }
